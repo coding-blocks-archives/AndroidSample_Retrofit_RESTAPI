@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 import com.codingblocks.restapiretrofitjson.adapters.PostAdapter;
+import com.codingblocks.restapiretrofitjson.api.API;
 import com.codingblocks.restapiretrofitjson.api.PostsAPI;
 import com.codingblocks.restapiretrofitjson.models.Post;
 
@@ -35,14 +36,9 @@ public class PostsActivity extends AppCompatActivity {
         postAdapter = new PostAdapter(this, new ArrayList<Post>());
         rvPostsList.setAdapter(postAdapter);
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com")
-                .addConverterFactory(
-                        GsonConverterFactory.create()
-                )
-                .build();
 
-        PostsAPI postsAPI = retrofit.create(PostsAPI.class);
+
+        PostsAPI postsAPI = API.getInstance().getPostsAPI();
         Callback<ArrayList<Post>> postCallback = new Callback<ArrayList<Post>>() {
 
             @Override

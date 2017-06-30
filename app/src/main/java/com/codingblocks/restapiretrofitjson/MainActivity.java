@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.codingblocks.restapiretrofitjson.adapters.UserAdapter;
+import com.codingblocks.restapiretrofitjson.api.API;
 import com.codingblocks.restapiretrofitjson.api.CommentsAPI;
 import com.codingblocks.restapiretrofitjson.api.PostsAPI;
 import com.codingblocks.restapiretrofitjson.api.UsersAPI;
@@ -64,16 +65,8 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com")
-                .addConverterFactory(
-                        GsonConverterFactory.create()
-                )
-                .build();
 
-        final UsersAPI usersAPI = retrofit.create(UsersAPI.class);
-
-        usersAPI.getUsers().enqueue(new Callback<ArrayList<User>>() {
+        API.getInstance().getUsersAPI().getUsers().enqueue(new Callback<ArrayList<User>>() {
             @Override
             public void onResponse(Call<ArrayList<User>> call,
                                    Response<ArrayList<User>> response) {
