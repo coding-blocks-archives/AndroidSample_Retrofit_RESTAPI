@@ -1,34 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="7sp"
+    app:cardCornerRadius="7sp"
     android:padding="20dp"
+    android:layout_margin="5sp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:text="Some body text goes here \nabout comment"
-        android:textSize="18sp"
-        android:id="@+id/tvCommentBody"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="10sp"
+        android:orientation="vertical">
+
         <TextView
-            android:textSize="15sp"
-            android:text="Users Name"
-            android:id="@+id/tvCommentName"
-            android:layout_weight="1"
-            android:layout_width="0dp"
+            android:text="Some body text goes here \nabout comment"
+            android:textSize="18sp"
+            android:id="@+id/tvCommentBody"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-        <TextView
-            android:textSize="15sp"
-            android:text="email@domain.com"
-            android:id="@+id/tvCommentEmail"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10sp">
+            <TextView
+                android:textSize="15sp"
+                android:text="Users Name"
+                android:id="@+id/tvCommentName"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textSize="15sp"
+                android:text="email@domain.com"
+                android:id="@+id/tvCommentEmail"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
     </LinearLayout>
 
-</LinearLayout>
+
+</android.support.v7.widget.CardView>

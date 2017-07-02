@@ -1,11 +1,15 @@
 package com.codingblocks.restapiretrofitjson.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import com.codingblocks.restapiretrofitjson.R
+import com.codingblocks.restapiretrofitjson.activities.PostsActivity
+import com.codingblocks.restapiretrofitjson.activities.TodosActivity
 import com.codingblocks.restapiretrofitjson.interfaces.OnItemClickListener
 import com.codingblocks.restapiretrofitjson.models.User
 import kotlinx.android.synthetic.main.list_item_user.view.*
@@ -24,8 +28,9 @@ class UserAdapter(private val context: Context,
         this.onItemClickListener = onItemClickListener
     }
 
-    fun updateUsers(newUserList: ArrayList<User>) {
+    fun updateUsers(newUserList: ArrayList<User>,progressBar: ProgressBar) {
         this.users = newUserList
+        progressBar.visibility=View.INVISIBLE
         notifyDataSetChanged()
     }
 
@@ -54,12 +59,16 @@ class UserAdapter(private val context: Context,
             thisView.tvUserPhone.text = user.phone
             thisView.tvUserEmail.text = user.email
             thisView.btnUserPosts.setOnClickListener {
-                onItemClickListener?.onItemClick(user.id,
-                        itemView.btnUserPosts)
+                val i = Intent(context, PostsActivity::class.java)
+                i.putExtra("userId", user.id)
+                i.putExtra("username", user.username)
+                context.startActivity(i)
             }
-            thisView.btnUserComments.setOnClickListener {
-                onItemClickListener?.onItemClick(user.id,
-                        itemView.btnUserComments)
+            thisView.btnUserTodos.setOnClickListener {
+                val i = Intent(context, TodosActivity::class.java)
+                i.putExtra("userId", user.id)
+                i.putExtra("username", user.username)
+                context.startActivity(i)
             }
 
         }
