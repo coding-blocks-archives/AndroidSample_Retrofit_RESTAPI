@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content" />
             <Button
                 android:id="@+id/btnUserPosts"
-                android:text="Show Posts"
+                android:text="SHOW POSTS"
                 android:layout_weight="1"
                 android:background="@drawable/my_button_bg"
                 android:textColor="@color/colorPrimaryDark"
