@@ -1,5 +1,7 @@
 package com.codingblocks.restapiretrofitjson.api;
 
+import com.codingblocks.restapiretrofitjson.models.Photos;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -15,6 +17,8 @@ public class API {
     private UsersAPI usersAPI;
     private CommentsAPI commentsAPI;
     private TodosAPI todosAPI;
+    private AlbumsApi albumsApi;
+    private AlbumsApi.PhotosApi photosApi;
 
     public PostsAPI getPostsAPI() {
         return postsAPI;
@@ -32,6 +36,14 @@ public class API {
         return todosAPI;
     }
 
+    public AlbumsApi getAlbumsApi() {
+        return albumsApi;
+    }
+
+    public AlbumsApi.PhotosApi getPhotosApi() {
+        return photosApi;
+    }
+
     private API() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com")
@@ -44,6 +56,9 @@ public class API {
         usersAPI = retrofit.create(UsersAPI.class);
         commentsAPI = retrofit.create(CommentsAPI.class);
         todosAPI = retrofit.create(TodosAPI.class);
+        albumsApi=retrofit.create(AlbumsApi.class);
+        photosApi=retrofit.create(AlbumsApi.PhotosApi.class);
+
     }
 
     public static API getInstance() {

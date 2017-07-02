@@ -9,6 +9,13 @@
         android:id="@+id/btnAllPosts"
         android:layout_gravity="bottom"
         android:text="Show All Posts"
+        android:background="@drawable/my_button_bg"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+    <ProgressBar
+        android:id="@+id/pbProgress"
+        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

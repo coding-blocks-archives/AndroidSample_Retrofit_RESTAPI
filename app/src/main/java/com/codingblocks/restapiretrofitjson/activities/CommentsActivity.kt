@@ -1,20 +1,17 @@
 package com.codingblocks.restapiretrofitjson.activities
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-
+import android.view.View
 import com.codingblocks.restapiretrofitjson.R
 import com.codingblocks.restapiretrofitjson.adapters.CommentAdapter
 import com.codingblocks.restapiretrofitjson.api.API
 import com.codingblocks.restapiretrofitjson.models.Comment
 import kotlinx.android.synthetic.main.activity_comments.*
-
-import kotlinx.android.synthetic.main.activity_comments.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
 
 class CommentsActivity : AppCompatActivity() {
 
@@ -25,6 +22,9 @@ class CommentsActivity : AppCompatActivity() {
         val commentAdapter =  CommentAdapter(this, ArrayList<Comment>())
         rvCommentsList.layoutManager = LinearLayoutManager(this)
         rvCommentsList.adapter = commentAdapter
+        pbProgress.visibility= View.VISIBLE
+
+        supportActionBar!!.title="Comments"
 
 
 
@@ -36,7 +36,7 @@ class CommentsActivity : AppCompatActivity() {
 
             override fun onResponse(call: Call<ArrayList<Comment>>?, response: Response<ArrayList<Comment>>?) {
                 //
-                commentAdapter.updateComments(response!!.body()!!)
+                commentAdapter.updateComments(response!!.body()!!,pbProgress)
             }
         })
     }

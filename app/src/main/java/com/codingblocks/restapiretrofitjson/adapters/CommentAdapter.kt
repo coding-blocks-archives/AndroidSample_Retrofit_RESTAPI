@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import android.widget.TextView
 import com.codingblocks.restapiretrofitjson.R
 import com.codingblocks.restapiretrofitjson.models.Comment
@@ -19,8 +20,9 @@ class CommentAdapter(private val context: Context,
                      private var comments: ArrayList<Comment>)
     : RecyclerView.Adapter<CommentAdapter.CommentViewHolder>() {
 
-    fun updateComments(comments: ArrayList<Comment>) {
+    fun updateComments(comments: ArrayList<Comment>,progressBar: ProgressBar) {
         this.comments = comments;
+        progressBar.visibility=View.INVISIBLE
         notifyDataSetChanged();
     }
 

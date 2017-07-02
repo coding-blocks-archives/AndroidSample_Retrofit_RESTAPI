@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.codingblocks.restapiretrofitjson.activities.TodosActivity">
+    tools:context="com.codingblocks.restapiretrofitjson.activities.PhotosActivity">
+
     <ProgressBar
         android:id="@+id/pbProgress"
         android:layout_gravity="center"
@@ -12,9 +13,7 @@
         android:layout_height="wrap_content" />
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvTodosList"
+        android:id="@+id/rvPhotosView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </android.support.v7.widget.RecyclerView>
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 </FrameLayout>
