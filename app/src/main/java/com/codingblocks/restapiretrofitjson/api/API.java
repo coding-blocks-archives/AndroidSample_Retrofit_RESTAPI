@@ -1,5 +1,7 @@
 package com.codingblocks.restapiretrofitjson.api;
 
+import com.codingblocks.restapiretrofitjson.models.Photo;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -15,6 +17,16 @@ public class API {
     private UsersAPI usersAPI;
     private CommentsAPI commentsAPI;
     private TodosAPI todosAPI;
+    private AlbumAPI albumsAPI;
+    private PhotoAPI photoAPI;
+
+    public PhotoAPI getPhotoAPI() {
+        return photoAPI;
+    }
+
+    public AlbumAPI getAlbumsAPI() {
+        return albumsAPI;
+    }
 
     public PostsAPI getPostsAPI() {
         return postsAPI;
@@ -44,6 +56,8 @@ public class API {
         usersAPI = retrofit.create(UsersAPI.class);
         commentsAPI = retrofit.create(CommentsAPI.class);
         todosAPI = retrofit.create(TodosAPI.class);
+        albumsAPI = retrofit.create(AlbumAPI.class);
+        photoAPI = retrofit.create(PhotoAPI.class);
     }
 
     public static API getInstance() {
