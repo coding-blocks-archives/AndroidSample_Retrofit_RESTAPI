@@ -1,7 +1,5 @@
 package com.codingblocks.restapiretrofitjson.api;
 
-import com.codingblocks.restapiretrofitjson.models.Post;
-
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -16,6 +14,7 @@ public class API {
     private PostsAPI postsAPI;
     private UsersAPI usersAPI;
     private CommentsAPI commentsAPI;
+    private TodosAPI todosAPI;
 
     public PostsAPI getPostsAPI() {
         return postsAPI;
@@ -29,7 +28,11 @@ public class API {
         return commentsAPI;
     }
 
-    private API () {
+    public TodosAPI getTodosAPI() {
+        return todosAPI;
+    }
+
+    private API() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com")
                 .addConverterFactory(
@@ -40,9 +43,10 @@ public class API {
         postsAPI = retrofit.create(PostsAPI.class);
         usersAPI = retrofit.create(UsersAPI.class);
         commentsAPI = retrofit.create(CommentsAPI.class);
+        todosAPI = retrofit.create(TodosAPI.class);
     }
 
-    public static API getInstance () {
+    public static API getInstance() {
         if (apiInstance == null) {
             apiInstance = new API();
         }

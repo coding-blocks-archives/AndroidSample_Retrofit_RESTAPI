@@ -15,10 +15,10 @@ import retrofit2.http.Query;
 public interface CommentsAPI {
 
     @GET("/comments")
-    Call<ArrayList<Comment>> getComments ();
+    Call<ArrayList<Comment>> getComments();
 
     @GET("/comments")
-    Call<ArrayList<Comment>> getCommentsByPostId (
+    Call<ArrayList<Comment>> getCommentsByPostId(
             @Query("postId") int postId
     );
 

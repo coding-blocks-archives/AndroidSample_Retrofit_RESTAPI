@@ -14,5 +14,5 @@ import retrofit2.http.GET;
 public interface UsersAPI {
 
     @GET("/users")
-    Call<ArrayList<User>> getUsers ();
+    Call<ArrayList<User>> getUsers();
 }
