@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
-    tools:context="com.codingblocks.restapiretrofitjson.activities.AlbumActivity">
+    tools:context="com.example.suraj.lecture11assignment.TodoActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_comments"
+        android:id="@+id/rv_todo"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

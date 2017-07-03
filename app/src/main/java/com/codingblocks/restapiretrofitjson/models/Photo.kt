@@ -4,9 +4,10 @@ package com.codingblocks.restapiretrofitjson.models
  * Created by Suraj on 6/30/2017.
  */
 
-data class Todo(
-        val userId: kotlin.Int,
+data class Photo(
+        val albumId: kotlin.Int,
         val id: kotlin.Int,
         val title: String,
-        val completed: kotlin.Boolean
+        val url: String,
+        val thumbnailUrl: String
 )

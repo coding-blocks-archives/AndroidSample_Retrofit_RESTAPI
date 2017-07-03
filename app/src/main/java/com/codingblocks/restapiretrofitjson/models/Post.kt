@@ -1,10 +1,10 @@
 package com.codingblocks.restapiretrofitjson.models
 
 /**
- * Created by championswimmer on 29/06/17.
+ * Created by Suraj on 6/29/2017.
  */
 
-data class Post(
+data class Post (
         val userId: Int,
         val id: Int,
         val title: String,
