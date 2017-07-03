@@ -36,8 +36,10 @@ public class PostsActivity extends AppCompatActivity {
 
         rvPostsList = (RecyclerView) findViewById(R.id.rvPostsList);
         rvPostsList.setLayoutManager(new LinearLayoutManager(this));
+
         postAdapter = new PostAdapter(this, new ArrayList<Post>());
         rvPostsList.setAdapter(postAdapter);
+
         postAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(int itemId, View view) {
