@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_margin="16dp"
     android:orientation="vertical"
-    tools:context="com.codingblocks.restapiretrofitjson.activities.MainActivity">
+    tools:context="com.example.suraj.lecture11assignment.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

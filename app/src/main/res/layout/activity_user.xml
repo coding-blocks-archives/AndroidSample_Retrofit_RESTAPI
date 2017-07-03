@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="8dp"
-    tools:context="com.codingblocks.restapiretrofitjson.activities.AlbumActivity">
+    tools:context="com.codingblocks.restapiretrofitjson.activities.UserActivity">
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_comments"
+        android:id="@+id/rv_users"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
     </android.support.v7.widget.RecyclerView>
+
 </FrameLayout>

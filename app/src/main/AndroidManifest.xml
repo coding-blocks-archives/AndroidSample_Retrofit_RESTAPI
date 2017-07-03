@@ -11,17 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.UsersActivity" />
-        <activity android:name=".activities.PostsActivity" />
-        <activity android:name=".activities.CommentsActivity" />
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.TodosActivity"></activity>
+        <activity android:name=".activities.UserActivity" />
+        <activity android:name=".activities.PostActivity" />
+        <activity android:name=".activities.CommentsActivity" />
+        <activity android:name=".activities.TodoActivity" />
+        <activity android:name=".activities.AlbumActivity" />
+        <activity android:name=".activities.PhotosActivity" />
+        <activity android:name=".activities.PhotoViewActivity"></activity>
     </application>
 
 </manifest>
