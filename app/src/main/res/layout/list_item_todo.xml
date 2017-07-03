@@ -1,12 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:padding="5dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:text="Sample Todo Text"
-        android:id="@+id/tvTodoTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
-</LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CheckBox
+
+                android:id="@+id/checkBoxTodo"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:textStyle="italic"
+                android:id="@+id/tvTodoTitle"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:textSize="40sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"/>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

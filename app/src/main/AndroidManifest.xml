@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.TodosActivity" />
-        <activity android:name=".activities.AlbumActivity"></activity>
+        <activity android:name=".activities.AlbumActivity" />
+        <activity android:name=".activities.PhotosActivity" />
+        <activity android:name=".activities.LargePhotoActivity"></activity>
     </application>
 
 </manifest>
