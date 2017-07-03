@@ -15,10 +15,10 @@ import retrofit2.http.Path;
 
 public interface AlbumAPI {
 
-    @GET("/album")
+    @GET("/albums")
     Call<ArrayList<Album>> getAlbum();
 
-    @GET("/album/{id}/photos")
+    @GET("/albums/{id}/photos")
     Call<ArrayList<Photo>> getPhotoById(
             @Path("id") int id
     );
