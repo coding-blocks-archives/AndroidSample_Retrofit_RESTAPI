@@ -1,55 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.aarushi.restapiretrofitjson.MainActivity">
+    tools:context="com.codingblocks.restapiretrofitjson.MainActivity">
 
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btnUsers"
+            android:text="Users"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+        <Button
+            android:id="@+id/btnPosts"
+            android:text="Posts"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
 
-    <Button
-        android:id="@+id/btnUsers"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="93dp"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="106dp"
-        android:textSize="20sp"
-        android:text="USERS" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/btnAlbums"
+            android:text="Albums"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+        <Button
+            android:id="@+id/btnTodos"
+            android:text="Todos"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btnPosts"
-        android:textSize="20sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/btnUsers"
-        android:layout_marginEnd="51dp"
-        android:layout_marginRight="51dp"
-        android:text="POSTS" />
-
-    <Button
-        android:id="@+id/btnAlbums"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/btnUsers"
-        android:layout_alignStart="@+id/btnUsers"
-        android:textSize="20sp"
-        android:layout_below="@+id/btnUsers"
-        android:layout_marginTop="66dp"
-        android:text="ALBUMS" />
-
-    <Button
-        android:id="@+id/btnTodos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_alignBottom="@+id/btnAlbums"
-        android:layout_alignLeft="@+id/btnPosts"
-        android:layout_alignStart="@+id/btnPosts"
-        android:text="TODOS" />
-</RelativeLayout>
+</LinearLayout>
