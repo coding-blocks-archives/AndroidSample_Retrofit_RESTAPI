@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tvAlbumTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Title"
+            android:textSize="40sp"
+            android:padding="8dp"/>
+
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

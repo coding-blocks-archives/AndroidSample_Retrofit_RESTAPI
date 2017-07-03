@@ -15,6 +15,11 @@ public class API {
     private UsersAPI usersAPI;
     private CommentsAPI commentsAPI;
     private TodosAPI todosAPI;
+    private AlbumsAPI albumsAPI ;
+
+    public AlbumsAPI getAlbumsAPI() {
+        return albumsAPI;
+    }
 
     public PostsAPI getPostsAPI() {
         return postsAPI;
@@ -44,6 +49,7 @@ public class API {
         usersAPI = retrofit.create(UsersAPI.class);
         commentsAPI = retrofit.create(CommentsAPI.class);
         todosAPI = retrofit.create(TodosAPI.class);
+        albumsAPI = retrofit.create(AlbumsAPI.class) ;
     }
 
     public static API getInstance() {
