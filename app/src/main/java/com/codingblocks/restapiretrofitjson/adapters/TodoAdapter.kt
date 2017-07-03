@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import com.codingblocks.restapiretrofitjson.R
 import com.codingblocks.restapiretrofitjson.models.Todo
 
@@ -48,6 +49,11 @@ public class TodoAdapter (
 
         fun bindTodo(todo: Todo) {
             itemView.tvTodoTitle.text = todo.title;
+            if (todos[position].completed == true) {
+                itemView.cbTodos.isChecked = true
+            } else {
+                itemView.cbTodos.isChecked = false
+            }
         }
     }
 }
