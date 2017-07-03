@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.codingblocks.restapiretrofitjson">
+    package="com.aarushi.restapiretrofitjson">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,9 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.UsersActivity" />
-        <activity android:name=".activities.PostsActivity" />
-        <activity android:name=".activities.CommentsActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +18,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.TodosActivity"></activity>
+        <activity android:name=".UserActivity" />
+        <activity android:name=".PostsActivity" />
+        <activity android:name=".AlbumsActivity" />
+        <activity android:name=".AlbumThumbnail" />
+        <activity android:name=".TodosActivity" />
+        <activity android:name=".ImageURL" />
+        <activity android:name=".CommentsActivity"></activity>
     </application>
 
 </manifest>
