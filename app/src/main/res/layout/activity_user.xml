@@ -3,11 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.aarushi.restapiretrofitjson.TodosActivity">
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.aarushi.restapiretrofitjson.UserActivity">
+
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvTodosList"
+        android:id="@+id/rvUsersList"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>
