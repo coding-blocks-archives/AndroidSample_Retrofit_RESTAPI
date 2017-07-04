@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.codingblocks.restapiretrofitjson.MainActivity">
+
 
     <LinearLayout
         android:layout_weight="1"
@@ -15,12 +20,19 @@
             android:id="@+id/btnUsers"
             android:text="Users"
             android:layout_weight="1"
+            android:textColorHighlight="@android:color/holo_purple"
             android:layout_width="match_parent"
+            android:textColor="@android:color/holo_green_dark"
+
+            android:textSize="25dp"
             android:layout_height="0dp" />
         <Button
             android:id="@+id/btnPosts"
             android:text="Posts"
             android:layout_weight="1"
+            android:textColorHighlight="@android:color/holo_purple"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="25dp"
             android:layout_width="match_parent"
             android:layout_height="0dp" />
 
@@ -33,13 +45,19 @@
         <Button
             android:id="@+id/btnAlbums"
             android:text="Albums"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="25dp"
             android:layout_weight="1"
             android:layout_width="match_parent"
+            android:textColorHighlight="@android:color/holo_purple"
             android:layout_height="0dp" />
         <Button
             android:id="@+id/btnTodos"
             android:text="Todos"
+            android:textColorHighlight="@android:color/holo_purple"
             android:layout_weight="1"
+            android:textColor="@android:color/holo_green_dark"
+            android:textSize="25dp"
             android:layout_width="match_parent"
             android:layout_height="0dp" />
     </LinearLayout>

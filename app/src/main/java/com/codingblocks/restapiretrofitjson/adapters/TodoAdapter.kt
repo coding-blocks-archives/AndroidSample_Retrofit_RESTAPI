@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
 import com.codingblocks.restapiretrofitjson.R
 import com.codingblocks.restapiretrofitjson.models.Todo
 
@@ -17,8 +18,9 @@ public class TodoAdapter (
         var todos: ArrayList<Todo>
 ) : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
-    fun updateTodos(todos: ArrayList<Todo>) {
+    fun updateTodos(todos: ArrayList<Todo>,pbProgressBar: ProgressBar) {
         this.todos = todos
+        pbProgressBar.visibility=View.INVISIBLE
         notifyDataSetChanged()
     }
 
@@ -39,7 +41,7 @@ public class TodoAdapter (
 
     override fun getItemCount(): Int {
         Log.d("TODOS", todos.size.toString())
-       return todos.size
+        return todos.size
     }
 
 
@@ -48,6 +50,7 @@ public class TodoAdapter (
 
         fun bindTodo(todo: Todo) {
             itemView.tvTodoTitle.text = todo.title;
+            if(todo.completed)itemView.cbCompleted.isChecked=true;
         }
     }
 }

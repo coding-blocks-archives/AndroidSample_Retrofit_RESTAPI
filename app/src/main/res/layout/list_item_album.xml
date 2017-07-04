@@ -6,26 +6,19 @@
     app:cardElevation="7sp"
     app:cardCornerRadius="12sp"
     android:layout_margin="5sp">
+
     <LinearLayout
-        android:orientation="vertical"
-        android:padding="20dp"
+        android:padding="20sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
+            android:id="@+id/tvTitle"
             android:text="Title"
-            android:textSize="30sp"
-            android:id="@+id/tvPostTitle"
+            android:padding="15sp"
+            android:textSize="21sp"
             android:layout_width="match_parent"
-            android:textColor="@android:color/holo_red_dark"
             android:layout_height="wrap_content" />
-        <TextView
-            android:textSize="15sp"
-            android:text="Some Body Goes Here"
-            android:id="@+id/tvPostBody"
-            android:layout_width="match_parent"
-            android:textColor="@android:color/holo_purple"
-            android:layout_height="wrap_content" />
-
     </LinearLayout>
+
 </android.support.v7.widget.CardView>
