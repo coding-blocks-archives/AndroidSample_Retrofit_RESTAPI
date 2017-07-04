@@ -22,6 +22,8 @@ import retrofit2.Response;
 
 public class AlbumActivity extends AppCompatActivity {
 
+    public static final String TAG = "alb_act";
+
     RecyclerView rvalbum;
     AlbumAdapter albumAdapter;
 

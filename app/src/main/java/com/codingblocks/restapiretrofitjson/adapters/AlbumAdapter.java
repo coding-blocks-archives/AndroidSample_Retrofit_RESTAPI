@@ -2,6 +2,7 @@ package com.codingblocks.restapiretrofitjson.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,8 @@ import java.util.ArrayList;
  */
 
 public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHolder> {
+
+    public static final String TAG = "alb_adp";
 
     private Context context;
     private ArrayList<Album> albumlist;
@@ -42,6 +45,8 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
     @Override
     public AlbumViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
+        Log.i(TAG, "onCreateViewHolder: ");
+
         LayoutInflater li = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
         View itemview = li.inflate(R.layout.list_item_album,parent,false);
         return new AlbumViewHolder(itemview);
@@ -49,6 +54,8 @@ public class AlbumAdapter extends RecyclerView.Adapter<AlbumAdapter.AlbumViewHol
 
     @Override
     public void onBindViewHolder(AlbumViewHolder holder, int position) {
+
+        Log.i(TAG, "onBindViewHolder: ");
 
         final Album thisalbum = albumlist.get(position);
 
