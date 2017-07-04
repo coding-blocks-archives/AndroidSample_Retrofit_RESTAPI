@@ -30,14 +30,14 @@ class CommentsActivity : AppCompatActivity() {
 
         API.getInstance().commentsAPI.getCommentsByPostId(intent.getIntExtra("postId", 0))
                 .enqueue(object : Callback<ArrayList<Comment>> {
-            override fun onFailure(call: Call<ArrayList<Comment>>?, t: Throwable?) {
-                //
-            }
+                    override fun onFailure(call: Call<ArrayList<Comment>>?, t: Throwable?) {
+                        //
+                    }
 
-            override fun onResponse(call: Call<ArrayList<Comment>>?, response: Response<ArrayList<Comment>>?) {
-                //
-                commentAdapter.updateComments(response!!.body()!!)
-            }
-        })
+                    override fun onResponse(call: Call<ArrayList<Comment>>?, response: Response<ArrayList<Comment>>?) {
+                        //
+                        commentAdapter.updateComments(response!!.body()!!)
+                    }
+                })
     }
 }
