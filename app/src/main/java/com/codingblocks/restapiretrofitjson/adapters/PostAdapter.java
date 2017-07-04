@@ -22,6 +22,7 @@ public class PostAdapter
         extends RecyclerView.Adapter<PostAdapter.PostViewHolder> {
 
     public static final String TAG = "PADPTR";
+    public static final String TaAG = "PADPTR";
 
     private Context context;
     private ArrayList<Post> posts;
