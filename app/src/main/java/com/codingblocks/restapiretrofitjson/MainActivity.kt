@@ -3,6 +3,7 @@ package com.codingblocks.restapiretrofitjson
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.codingblocks.restapiretrofitjson.activities.AlbumActivity
 import com.codingblocks.restapiretrofitjson.activities.PostsActivity
 import com.codingblocks.restapiretrofitjson.activities.TodosActivity
 import com.codingblocks.restapiretrofitjson.activities.UsersActivity
@@ -15,16 +16,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnPosts.setOnClickListener({
+        iv_Posts.setOnClickListener({
             startActivity(Intent(this@MainActivity, PostsActivity::class.java))
         })
 
-        btnUsers.setOnClickListener({
+        iv_user.setOnClickListener({
             startActivity(Intent(this@MainActivity, UsersActivity::class.java))
         })
 
-        btnTodos.setOnClickListener({
+        iv_Todos.setOnClickListener({
             startActivity(Intent(this@MainActivity, TodosActivity::class.java))
+        })
+
+        iv_Albums.setOnClickListener ({
+            startActivity(Intent(this@MainActivity,AlbumActivity::class.java))
         })
 
 

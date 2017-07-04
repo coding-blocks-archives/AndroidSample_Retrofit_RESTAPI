@@ -47,7 +47,8 @@ public class TodoAdapter (
         : RecyclerView.ViewHolder(itemView) {
 
         fun bindTodo(todo: Todo) {
-            itemView.tvTodoTitle.text = todo.title;
+            itemView.tvTodoTitle.text = todo.title
+            itemView.checkbox.isChecked=todo.completed
         }
     }
 }

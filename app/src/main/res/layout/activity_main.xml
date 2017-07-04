@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_margin="10dp"
     android:layout_height="match_parent"
     tools:context="com.codingblocks.restapiretrofitjson.MainActivity">
 
@@ -11,18 +12,35 @@
         android:layout_width="0dp"
         android:orientation="vertical"
         android:layout_height="match_parent">
-        <Button
-            android:id="@+id/btnUsers"
+        <ImageView
+            android:id="@+id/iv_user"
             android:text="Users"
             android:layout_weight="1"
             android:layout_width="match_parent"
+            android:src="@drawable/user"
             android:layout_height="0dp" />
-        <Button
-            android:id="@+id/btnPosts"
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="USER"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"/>
+        <ImageView
+            android:id="@+id/iv_Posts"
             android:text="Posts"
+            android:src="@drawable/post"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="POST"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"/>
 
     </LinearLayout>
     <LinearLayout
@@ -30,18 +48,34 @@
         android:layout_width="0dp"
         android:orientation="vertical"
         android:layout_height="match_parent">
-        <Button
-            android:id="@+id/btnAlbums"
+        <ImageView
+            android:id="@+id/iv_Albums"
             android:text="Albums"
+            android:src="@drawable/album"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp" />
-        <Button
-            android:id="@+id/btnTodos"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ALBUM"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"/>
+        <ImageView
+            android:id="@+id/iv_Todos"
             android:text="Todos"
+            android:src="@drawable/todo"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TODO's"
+            android:gravity="center_horizontal"
+            android:textColor="@android:color/black"
+            android:textSize="25sp"/>
     </LinearLayout>
 
 </LinearLayout>
