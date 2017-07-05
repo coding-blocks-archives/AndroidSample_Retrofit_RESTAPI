@@ -60,19 +60,6 @@ public class UsersActivity extends AppCompatActivity {
             }
         });
 
-        ((Button) findViewById(R.id.btnAllPosts)).setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        startActivity(new Intent(
-                                UsersActivity.this,
-                                PostsActivity.class
-                        ));
-                    }
-                }
-        );
-
-
         API.getInstance().getUsersAPI().getUsers().enqueue(new Callback<ArrayList<User>>() {
             @Override
             public void onResponse(Call<ArrayList<User>> call,

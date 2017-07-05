@@ -3,7 +3,6 @@ package com.codingblocks.restapiretrofitjson.activities
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
-import android.util.Log
 
 import kotlinx.android.synthetic.main.activity_todos.*
 
@@ -22,7 +21,7 @@ class TodosActivity : AppCompatActivity() {
         setContentView(R.layout.activity_todos)
 
         rvTodosList.layoutManager = LinearLayoutManager(this)
-        var todoAdapter = TodoAdapter(ArrayList<Todo>())
+        var todoAdapter = TodoAdapter(ArrayList<Todo>(),this)
         rvTodosList.adapter = todoAdapter
 
         var todoCallback = object:  Callback<ArrayList<Todo>> {
@@ -30,7 +29,7 @@ class TodosActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<ArrayList<Todo>>?, response: Response<ArrayList<Todo>>?) {
-                todoAdapter.updateTodos(response!!.body()!!)
+                todoAdapter.updateTodo(response!!.body()!!)
             }
 
         }
