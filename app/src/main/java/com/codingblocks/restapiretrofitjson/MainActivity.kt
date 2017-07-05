@@ -3,6 +3,7 @@ package com.codingblocks.restapiretrofitjson
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.codingblocks.restapiretrofitjson.activities.AlbumsActivity
 import com.codingblocks.restapiretrofitjson.activities.PostsActivity
 import com.codingblocks.restapiretrofitjson.activities.TodosActivity
 import com.codingblocks.restapiretrofitjson.activities.UsersActivity
@@ -27,6 +28,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, TodosActivity::class.java))
         })
 
-
+        btnAlbums.setOnClickListener({
+            startActivity(Intent(this@MainActivity, AlbumsActivity::class.java))
+        })
     }
 }

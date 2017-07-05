@@ -1,10 +1,13 @@
 package com.codingblocks.restapiretrofitjson.adapters
 
+import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
+import android.widget.TextView
 import com.codingblocks.restapiretrofitjson.R
 import com.codingblocks.restapiretrofitjson.models.Todo
 
@@ -22,9 +25,12 @@ public class TodoAdapter (
         notifyDataSetChanged()
     }
 
-    override fun onBindViewHolder(holder: TodoViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
 
-        holder?.bindTodo(todos[position])
+        val (_, _, title, completed) = todos!![position]
+
+        holder.tvTodoTitle.text = title
+        holder.todocheck.isChecked = completed
 
     }
 
@@ -43,11 +49,16 @@ public class TodoAdapter (
     }
 
 
-    inner class TodoViewHolder(itemView: View?)
+    inner class TodoViewHolder(itemView: View)
         : RecyclerView.ViewHolder(itemView) {
+        var todocheck: CheckBox
+        var tvTodoTitle: TextView
 
-        fun bindTodo(todo: Todo) {
-            itemView.tvTodoTitle.text = todo.title;
+        init {
+
+            tvTodoTitle = itemView.findViewById(R.id.tvTodoTitle) as TextView
+            todocheck = itemView.findViewById(R.id.todocheck) as CheckBox
+
         }
     }
 }
