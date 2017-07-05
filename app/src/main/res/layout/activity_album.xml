@@ -6,14 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorPrimaryDark"
-    tools:context="com.codingblocks.restapiretrofitjson.activities.CommentsActivity">
-    
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvCommentsList"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    tools:context="com.codingblocks.restapiretrofitjson.activities.AlbumActivity">
 
-    </android.support.v7.widget.RecyclerView>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvAlbumListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <ProgressBar
         android:layout_gravity="center"
