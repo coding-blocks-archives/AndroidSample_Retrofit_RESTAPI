@@ -15,6 +15,7 @@ public class API {
     private UsersAPI usersAPI;
     private CommentsAPI commentsAPI;
     private TodosAPI todosAPI;
+    private AlbumsAPI albumsAPI;
 
     public PostsAPI getPostsAPI() {
         return postsAPI;
@@ -31,7 +32,9 @@ public class API {
     public TodosAPI getTodosAPI() {
         return todosAPI;
     }
-
+    public AlbumsAPI getAlbumsAPI() {
+        return albumsAPI;
+    }
     private API() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com")
@@ -44,6 +47,7 @@ public class API {
         usersAPI = retrofit.create(UsersAPI.class);
         commentsAPI = retrofit.create(CommentsAPI.class);
         todosAPI = retrofit.create(TodosAPI.class);
+        albumsAPI = retrofit.create(AlbumsAPI.class);
     }
 
     public static API getInstance() {
@@ -53,4 +57,6 @@ public class API {
 
         return apiInstance;
     }
+
+
 }
