@@ -54,13 +54,13 @@
             android:layout_height="wrap_content">
             <Button
                 android:id="@+id/btnUserComments"
-                android:text="Show Todos"
+                android:text="SHOW TODOS"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
             <Button
                 android:id="@+id/btnUserPosts"
-                android:text="Show Posts"
+                android:text="SHOW POSTS"
                 android:layout_weight="1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" />
