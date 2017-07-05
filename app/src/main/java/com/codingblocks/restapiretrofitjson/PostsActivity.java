@@ -1,19 +1,13 @@
-package com.codingblocks.restapiretrofitjson.activities;
+package com.codingblocks.restapiretrofitjson;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
 
-import com.codingblocks.restapiretrofitjson.MainActivity;
-import com.codingblocks.restapiretrofitjson.R;
 import com.codingblocks.restapiretrofitjson.adapters.PostAdapter;
-import com.codingblocks.restapiretrofitjson.api.API;
 import com.codingblocks.restapiretrofitjson.api.PostsAPI;
-import com.codingblocks.restapiretrofitjson.interfaces.OnItemClickListener;
 import com.codingblocks.restapiretrofitjson.models.Post;
 
 import java.util.ArrayList;
@@ -21,8 +15,14 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
-public class PostsActivity extends AppCompatActivity {
+/**
+ * Created by Harshi on 7/5/2017.
+ */
+
+public class PostsActivity  extends AppCompatActivity {
 
     public static final String TAG = "PA";
 
@@ -38,17 +38,17 @@ public class PostsActivity extends AppCompatActivity {
         rvPostsList.setLayoutManager(new LinearLayoutManager(this));
         postAdapter = new PostAdapter(this, new ArrayList<Post>());
         rvPostsList.setAdapter(postAdapter);
-        postAdapter.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(int itemId, View view) {
-                Intent i = new Intent(PostsActivity.this, CommentsActivity.class);
-                i.putExtra("postId", itemId);
-                startActivity(i);
-            }
-        });
 
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("https://jsonplaceholder.typicode.com")
+                .addConverterFactory(
+                        GsonConverterFactory.create()
+                )
+                .build();
 
-        PostsAPI postsAPI = API.getInstance().getPostsAPI();
+        PostsAPI postsAPI = retrofit.create(PostsAPI.class);
+//        PostsAPI postsAPI = RestAPI.getInstance().create(PostsAPI.class);
+
         Callback<ArrayList<Post>> postCallback = new Callback<ArrayList<Post>>() {
 
             @Override
@@ -71,3 +71,4 @@ public class PostsActivity extends AppCompatActivity {
 
     }
 }
+

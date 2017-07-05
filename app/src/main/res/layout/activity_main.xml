@@ -4,44 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.codingblocks.restapiretrofitjson.MainActivity">
+    android:orientation="vertical"
+    tools:context="com.developer.harshi.apihomework.MainActivity"
+    android:weightSum="1">
 
-    <LinearLayout
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
-        <Button
-            android:id="@+id/btnUsers"
-            android:text="Users"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
-        <Button
-            android:id="@+id/btnPosts"
-            android:text="Posts"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_weight="1"
-        android:layout_width="0dp"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
-        <Button
-            android:id="@+id/btnAlbums"
-            android:text="Albums"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
-        <Button
-            android:id="@+id/btnTodos"
-            android:text="Todos"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/btnUsers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open Users" />
+
+    <Button
+        android:id="@+id/btnPosts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open Posts" />
+
+    <Button
+        android:id="@+id/btnImages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open Images" />
+
+    <Button
+        android:id="@+id/btnTodos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open Todos" />
+
 
 </LinearLayout>

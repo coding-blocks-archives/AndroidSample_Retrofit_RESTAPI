@@ -1,9 +1,8 @@
 package com.codingblocks.restapiretrofitjson.api;
 
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.codingblocks.restapiretrofitjson.models.Todo;
+import com.codingblocks.restapiretrofitjson.models.Todos;
 
 import java.util.ArrayList;
 
@@ -18,7 +17,7 @@ import retrofit2.http.Query;
 public interface TodosAPI {
 
     @GET("/todos")
-    Call<ArrayList<Todo>> getTodos(
+    Call<ArrayList<Todos>> getTodos(
             @Nullable
             @Query("userId") Integer userId
     );
