@@ -1,6 +1,8 @@
 package com.codingblocks.restapiretrofitjson.activities;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -32,6 +34,10 @@ public class UsersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_users);
 
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+            getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+        getSupportActionBar().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.colorPrimary)));
+
         rvUserList = (RecyclerView) findViewById(R.id.rvUserList);
         rvUserList.setLayoutManager(new LinearLayoutManager(this));
         userAdapter = new UserAdapter(this, new ArrayList<User>());
@@ -39,24 +45,25 @@ public class UsersActivity extends AppCompatActivity {
         userAdapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(int itemId, View view) {
+                Intent intent = null;
 
                 switch (view.getId()) {
-                    case R.id.btnUserComments:
-                        Intent todosActIntent = new Intent(UsersActivity.this,
+                    case R.id.btnUserTodos:
+                        intent = new Intent(UsersActivity.this,
                                 TodosActivity.class);
-                        todosActIntent.putExtra("userId", itemId);
-                        startActivity(todosActIntent);
                         break;
                     case R.id.btnUserPosts:
-                        Intent postActIntent = new Intent(UsersActivity.this,
+                        intent = new Intent(UsersActivity.this,
                                 PostsActivity.class);
-
-                        postActIntent.putExtra("userId", itemId);
-                        startActivity(postActIntent);
+                        break;
+                    case R.id.btnUserAlbum:
+                        intent = new Intent(UsersActivity.this,
+                                AlbumsActivity.class);
                         break;
                 }
 
-
+                intent.putExtra("userId", itemId);
+                startActivity(intent);
             }
         });
 

@@ -16,13 +16,17 @@
             android:text="Users"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            android:layout_height="0dp"
+            android:background="@color/colorPrimary"
+            android:textColor="@android:color/background_light"/>
         <Button
             android:id="@+id/btnPosts"
             android:text="Posts"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            android:layout_height="0dp"
+            android:background="@color/colorPost"
+            android:textColor="@android:color/background_light" />
 
     </LinearLayout>
     <LinearLayout
@@ -35,13 +39,17 @@
             android:text="Albums"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            android:layout_height="0dp"
+            android:background="@color/colorAlbum"
+            android:textColor="@android:color/background_light" />
         <Button
             android:id="@+id/btnTodos"
             android:text="Todos"
             android:layout_weight="1"
             android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            android:layout_height="0dp"
+            android:background="@color/colorToDo"
+            android:textColor="@android:color/background_light" />
     </LinearLayout>
 
 </LinearLayout>

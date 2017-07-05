@@ -9,6 +9,8 @@
         android:id="@+id/btnAllPosts"
         android:layout_gravity="bottom"
         android:text="Show All Posts"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/cardview_light_background"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -16,7 +18,8 @@
         android:layout_marginBottom="40dp"
         android:id="@+id/rvUserList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
 
     </android.support.v7.widget.RecyclerView>
 

@@ -1,11 +1,14 @@
 package com.codingblocks.restapiretrofitjson.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.codingblocks.restapiretrofitjson.R
+import com.codingblocks.restapiretrofitjson.activities.ShowUserActivity
 import com.codingblocks.restapiretrofitjson.interfaces.OnItemClickListener
 import com.codingblocks.restapiretrofitjson.models.User
 import kotlinx.android.synthetic.main.list_item_user.view.*
@@ -57,11 +60,22 @@ class UserAdapter(private val context: Context,
                 onItemClickListener?.onItemClick(user.id,
                         itemView.btnUserPosts)
             }
-            thisView.btnUserComments.setOnClickListener {
+            thisView.btnUserTodos.setOnClickListener {
                 onItemClickListener?.onItemClick(user.id,
-                        itemView.btnUserComments)
+                        itemView.btnUserTodos)
+            }
+            thisView.btnUserAlbum.setOnClickListener {
+                onItemClickListener?.onItemClick(user.id,
+                        itemView.btnUserAlbum)
             }
 
+            thisView.setOnClickListener({
+                val intent: Intent = Intent(context, ShowUserActivity::class.java)
+                intent.putExtra("userId", user.id)
+                Log.d("TAG", "onBindViewHolder: "+user.id)
+
+                context.startActivity(intent)
+            })
         }
 
     }
