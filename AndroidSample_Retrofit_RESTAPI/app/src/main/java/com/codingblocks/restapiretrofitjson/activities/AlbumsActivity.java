@@ -1,4 +1,4 @@
-package com.codingblocks.restapiretrofitjson;
+package com.codingblocks.restapiretrofitjson.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.codingblocks.restapiretrofitjson.activities.PhotosActivity;
+import com.codingblocks.restapiretrofitjson.R;
 import com.codingblocks.restapiretrofitjson.adapters.AlbumsAdapter;
 import com.codingblocks.restapiretrofitjson.api.API;
 import com.codingblocks.restapiretrofitjson.interfaces.OnItemClickListener;
@@ -24,6 +24,7 @@ public class AlbumsActivity extends AppCompatActivity {
     RecyclerView rvAlbums;
     AlbumsAdapter albumsAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,7 @@ public class AlbumsActivity extends AppCompatActivity {
             @Override
             public void onItemClick(int itemId, View view) {
                 startActivity((new Intent(AlbumsActivity.this,PhotosActivity.class)).putExtra("albumId",itemId));
+
             }
         });
 

@@ -45,8 +45,8 @@ public class API {
                 )
                 .build();
 
-        postsAPI = retrofit.create(PostsAPI.class);
         albumsApi = retrofit.create(AlbumsApi.class);
+        postsAPI = retrofit.create(PostsAPI.class);
         usersAPI = retrofit.create(UsersAPI.class);
         commentsAPI = retrofit.create(CommentsAPI.class);
         todosAPI = retrofit.create(TodosAPI.class);

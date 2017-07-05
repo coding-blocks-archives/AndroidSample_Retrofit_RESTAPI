@@ -12,6 +12,7 @@ import retrofit2.http.GET;
  */
 
 public interface AlbumsApi {
+
     @GET("/albums")
     Call<ArrayList<Album>> getTitle();
 }

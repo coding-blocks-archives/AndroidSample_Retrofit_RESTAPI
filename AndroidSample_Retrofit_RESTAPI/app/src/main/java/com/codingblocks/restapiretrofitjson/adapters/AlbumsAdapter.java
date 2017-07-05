@@ -1,9 +1,5 @@
 package com.codingblocks.restapiretrofitjson.adapters;
 
-
-/**
- * Created by GhanshamBansal on 05/07/17.
- */
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -17,15 +13,11 @@ import com.codingblocks.restapiretrofitjson.models.Album;
 
 import java.util.ArrayList;
 
-
-
-
 /**
- * Created by GhanshamBansal on 01/07/17.
+ * Created by GhanshamBansal on 05/07/17.
  */
 
 public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.AlbumsViewHolder> {
-
     private Context context;
     private ArrayList<Album> albums;
     private OnItemClickListener onItemClickListener;
@@ -59,7 +51,7 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.AlbumsView
             @Override
             public void onClick(View v) {
                 if (onItemClickListener != null) {
-                    onItemClickListener.onItemClick(thisAlbum.getId(),v);
+                    onItemClickListener.onItemClick(thisAlbum.getId(), v);
                 }
             }
         });
@@ -82,6 +74,3 @@ public class AlbumsAdapter extends RecyclerView.Adapter<AlbumsAdapter.AlbumsView
         }
     }
 }
-
-
-
