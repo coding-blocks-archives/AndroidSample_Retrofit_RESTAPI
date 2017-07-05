@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorPost">#f73838</color>
+    <color name="colorComment">#288c41</color>
+    <color name="colorAlbum">#EDED0B</color>
+    <color name="colorToDo">#861E99</color>
+    <color name="colorMain">#02011e</color>
 </resources>

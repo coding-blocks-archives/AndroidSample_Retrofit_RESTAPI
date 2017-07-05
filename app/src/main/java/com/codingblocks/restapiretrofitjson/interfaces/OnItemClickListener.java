@@ -1,5 +1,6 @@
 package com.codingblocks.restapiretrofitjson.interfaces;
 
+import android.support.annotation.Nullable;
 import android.view.View;
 
 /**

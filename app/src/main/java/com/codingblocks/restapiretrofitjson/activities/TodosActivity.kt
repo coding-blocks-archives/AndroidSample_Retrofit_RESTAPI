@@ -1,5 +1,7 @@
 package com.codingblocks.restapiretrofitjson.activities
 
+import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -20,6 +22,10 @@ class TodosActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_todos)
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+            window.setStatusBarColor(getResources().getColor(R.color.colorToDo))
+        getSupportActionBar()?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.colorToDo)))
 
         rvTodosList.layoutManager = LinearLayoutManager(this)
         var todoAdapter = TodoAdapter(ArrayList<Todo>())

@@ -1,5 +1,7 @@
 package com.codingblocks.restapiretrofitjson.activities
 
+import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
@@ -21,6 +23,10 @@ class CommentsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_comments)
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+            window.setStatusBarColor(getResources().getColor(R.color.colorComment))
+        getSupportActionBar()?.setBackgroundDrawable(ColorDrawable(resources.getColor(R.color.colorComment)))
 
         val commentAdapter =  CommentAdapter(this, ArrayList<Comment>())
         rvCommentsList.layoutManager = LinearLayoutManager(this)
