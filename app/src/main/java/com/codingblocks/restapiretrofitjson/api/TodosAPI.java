@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -17,10 +18,17 @@ import retrofit2.http.Query;
 
 public interface TodosAPI {
 
-    @GET("/todos")
-    Call<ArrayList<Todo>> getTodos(
-            @Nullable
-            @Query("userId") Integer userId
+    @GET ("/todos")
+    Call<ArrayList<Todo>> getTodos();
+
+    @GET ("/todos")
+    Call<ArrayList<Todo>> getTodoByUserId(
+            @Query("userId")int userId
+    );
+
+    @GET ("/todos/{id}")
+    Call<ArrayList<Todo>> getTodoById(
+            @Path("id") int id
     );
 
 

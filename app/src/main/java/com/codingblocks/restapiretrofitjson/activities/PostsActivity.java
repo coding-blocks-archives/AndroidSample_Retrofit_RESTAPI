@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
-import com.codingblocks.restapiretrofitjson.MainActivity;
 import com.codingblocks.restapiretrofitjson.R;
 import com.codingblocks.restapiretrofitjson.adapters.PostAdapter;
 import com.codingblocks.restapiretrofitjson.api.API;

@@ -14,14 +14,18 @@
         <activity android:name=".activities.UsersActivity" />
         <activity android:name=".activities.PostsActivity" />
         <activity android:name=".activities.CommentsActivity" />
+        <activity android:name=".activities.TodosActivity" />
+        <activity android:name=".activities.AlbumActivity" />
+        <activity android:name=".activities.PhotosActivity" />
+        <activity android:name=".activities.Temporary" />
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.TodosActivity"></activity>
     </application>
 
 </manifest>
