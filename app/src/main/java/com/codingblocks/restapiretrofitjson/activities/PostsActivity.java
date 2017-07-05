@@ -29,6 +29,7 @@ public class PostsActivity extends AppCompatActivity {
     RecyclerView rvPostsList;
     PostAdapter postAdapter;
 
+    //added comments
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
