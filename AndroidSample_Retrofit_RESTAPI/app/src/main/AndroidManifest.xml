@@ -23,8 +23,7 @@
         </activity>
         <activity android:name=".activities.TodosActivity" />
         <activity android:name=".activities.AlbumsActivity" />
-        <activity android:name=".activities.PhotosActivity" />
-        <activity android:name=".activities.PicActivity"></activity>
+        <activity android:name=".activities.PhotosActivity"></activity>
     </application>
 
 </manifest>
