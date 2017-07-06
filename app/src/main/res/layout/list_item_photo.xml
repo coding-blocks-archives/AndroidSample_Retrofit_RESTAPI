@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="5dp"
+    app:cardCornerRadius="3dp"
+    android:layout_margin="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/tvPhoto"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="5dp"
+            app:srcCompat="@drawable/loading" />
+
+        <TextView
+            android:id="@+id/tvPhotoTitle"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:text="Title" />
+
+
+    </LinearLayout>
+
+
+</android.support.v7.widget.CardView>
