@@ -12,12 +12,17 @@ public class API {
     private static API apiInstance;
 
     private PostsAPI postsAPI;
+    private AlbumsApi albumsApi;
     private UsersAPI usersAPI;
     private CommentsAPI commentsAPI;
     private TodosAPI todosAPI;
 
     public PostsAPI getPostsAPI() {
         return postsAPI;
+    }
+
+    public AlbumsApi getAlbumsApi() {
+        return albumsApi;
     }
 
     public UsersAPI getUsersAPI() {
@@ -40,6 +45,7 @@ public class API {
                 )
                 .build();
 
+        albumsApi = retrofit.create(AlbumsApi.class);
         postsAPI = retrofit.create(PostsAPI.class);
         usersAPI = retrofit.create(UsersAPI.class);
         commentsAPI = retrofit.create(CommentsAPI.class);
