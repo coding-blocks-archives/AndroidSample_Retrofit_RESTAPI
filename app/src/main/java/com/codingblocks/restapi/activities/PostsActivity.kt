@@ -9,6 +9,7 @@ import com.codingblocks.restapi.R
 import com.codingblocks.restapi.adapters.PostsAdapter
 import com.codingblocks.restapi.api.Client
 import com.codingblocks.restapi.models.Post
+import com.codingblocks.restapi.utils.rfcb
 import kotlinx.android.synthetic.main.activity_posts.*
 
 import java.util.ArrayList
@@ -28,14 +29,6 @@ class PostsActivity : AppCompatActivity() {
         rvPostsList.layoutManager = LinearLayoutManager(this)
         rvPostsList.adapter = postsAdapter
 
-        Client.api.posts.enqueue(object : Callback<ArrayList<Post>> {
-            override fun onResponse(call: Call<ArrayList<Post>>, response: Response<ArrayList<Post>>) {
-                postsAdapter.setPosts(response.body()!!)
-            }
-
-            override fun onFailure(call: Call<ArrayList<Post>>, t: Throwable) {
-
-            }
-        })
+        Client.api.posts.enqueue(rfcb { t, resp -> resp?.body()?.let { postsAdapter.setPosts(it) } })
     }
 }

@@ -9,6 +9,7 @@ import com.codingblocks.restapi.R
 import com.codingblocks.restapi.adapters.TodosAdapter
 import com.codingblocks.restapi.api.Client
 import com.codingblocks.restapi.models.Todo
+import com.codingblocks.restapi.utils.rfcb
 import kotlinx.android.synthetic.main.activity_todos.*
 
 import java.util.ArrayList
@@ -28,14 +29,6 @@ class TodosActivity : AppCompatActivity() {
         rvTodosList.layoutManager = LinearLayoutManager(this)
         rvTodosList.adapter = todosAdapter
 
-        Client.api.todos.enqueue(object : Callback<ArrayList<Todo>> {
-            override fun onResponse(call: Call<ArrayList<Todo>>, response: Response<ArrayList<Todo>>) {
-                todosAdapter.setTodos(response.body()!!)
-            }
-
-            override fun onFailure(call: Call<ArrayList<Todo>>, t: Throwable) {
-
-            }
-        })
+        Client.api.todos.enqueue(rfcb { t, resp -> resp?.body()?.let { todosAdapter.setTodos(it) } })
     }
 }

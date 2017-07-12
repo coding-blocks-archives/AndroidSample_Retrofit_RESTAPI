@@ -9,6 +9,7 @@ import com.codingblocks.restapi.R
 import com.codingblocks.restapi.adapters.UsersAdapter
 import com.codingblocks.restapi.api.Client
 import com.codingblocks.restapi.models.User
+import com.codingblocks.restapi.utils.rfcb
 import kotlinx.android.synthetic.main.activity_users.*
 
 import java.util.ArrayList
@@ -28,14 +29,6 @@ class UsersActivity : AppCompatActivity() {
         rvUsersList.layoutManager = LinearLayoutManager(this)
         rvUsersList.adapter = usersAdapter
 
-        Client.api.users.enqueue(object : Callback<ArrayList<User>> {
-            override fun onResponse(call: Call<ArrayList<User>>, response: Response<ArrayList<User>>) {
-                usersAdapter.setUsers(response.body()!!)
-            }
-
-            override fun onFailure(call: Call<ArrayList<User>>, t: Throwable) {
-
-            }
-        })
+        Client.api.users.enqueue(rfcb { t, resp -> resp?.body()?.let { usersAdapter.setUsers(it) } })
     }
 }

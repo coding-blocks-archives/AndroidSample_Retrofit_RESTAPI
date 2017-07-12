@@ -9,6 +9,7 @@ import com.codingblocks.restapi.R
 import com.codingblocks.restapi.adapters.AlbumsAdapter
 import com.codingblocks.restapi.api.Client
 import com.codingblocks.restapi.models.Album
+import com.codingblocks.restapi.utils.rfcb
 import kotlinx.android.synthetic.main.activity_albums.*
 
 import java.util.ArrayList
@@ -29,14 +30,8 @@ class AlbumsActivity : AppCompatActivity() {
         rvAlbumsList.layoutManager = LinearLayoutManager(this)
         rvAlbumsList.adapter = albumsAdapter
 
-        Client.api.albums.enqueue(object : Callback<ArrayList<Album>> {
-            override fun onResponse(call: Call<ArrayList<Album>>, response: Response<ArrayList<Album>>) {
-                albumsAdapter.setAlbums(response.body()!!)
-            }
-
-            override fun onFailure(call: Call<ArrayList<Album>>, t: Throwable) {
-
-            }
+        Client.api.albums.enqueue(rfcb { t, resp ->
+            resp?.body()?.let { albumsAdapter.setAlbums(it) }
         })
     }
 }
