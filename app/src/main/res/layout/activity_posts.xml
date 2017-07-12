@@ -6,4 +6,12 @@
     android:layout_height="match_parent"
     tools:context="com.codingblocks.restapi.activities.PostsActivity">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvPostsList"
+        tools:listitem="@layout/list_item_post"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
+
 </FrameLayout>

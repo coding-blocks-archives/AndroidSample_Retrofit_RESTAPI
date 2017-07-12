@@ -6,4 +6,10 @@
     android:layout_height="match_parent"
     tools:context="com.codingblocks.restapi.activities.AlbumsActivity">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvAlbumsList"
+        tools:listitem="@layout/list_item_album"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 </FrameLayout>

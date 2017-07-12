@@ -30,7 +30,7 @@ public class Client {
     private Client () {}
     private static final Client ourInstance = new Client();
 
-    public Client getInstance () {
+    public static Client getInstance () {
         return ourInstance;
     }
 }

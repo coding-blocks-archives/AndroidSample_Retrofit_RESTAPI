@@ -36,7 +36,7 @@ public class TodosAdapter extends RecyclerView.Adapter<TodosAdapter.TodoViewHold
 
     @Override
     public void onBindViewHolder(TodoViewHolder holder, int position) {
-
+        holder.bindView(todos.get(position));
     }
 
     @Override
@@ -54,6 +54,7 @@ public class TodosAdapter extends RecyclerView.Adapter<TodosAdapter.TodoViewHold
 
         void bindView (Todo todo) {
             cbTodoTitle.setText(todo.getTitle());
+            cbTodoTitle.setChecked(todo.isCompleted());
         }
     }
 }

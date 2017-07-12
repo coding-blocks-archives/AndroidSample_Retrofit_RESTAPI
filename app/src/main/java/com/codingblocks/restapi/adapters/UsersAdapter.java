@@ -36,7 +36,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
 
     @Override
     public void onBindViewHolder(UserViewHolder holder, int position) {
-
+        holder.bindView(users.get(position));
     }
 
     @Override
@@ -56,7 +56,7 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UserViewHold
         }
 
         void bindView (User user) {
-            tvUserPhone.setText(user.getName());
+            tvUserPhone.setText(user.getPhone());
             tvUserEmail.setText(user.getEmail());
             tvUserUsername.setText(user.getUsername());
             tvUserName.setText(user.getName());

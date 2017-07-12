@@ -5,5 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.codingblocks.restapi.activities.UsersActivity">
+    <android.support.v7.widget.RecyclerView
+        tools:listitem="@layout/list_item_user"
+        android:id="@+id/rvUsersList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
 
 </FrameLayout>
