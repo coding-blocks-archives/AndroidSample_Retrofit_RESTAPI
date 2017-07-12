@@ -35,7 +35,7 @@ class AlbumsAdapter(private var albums: ArrayList<Album>?) : RecyclerView.Adapte
         return albums!!.size
     }
 
-    internal inner class AlbumViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class AlbumViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvAlbumTitle: TextView
 
         init {

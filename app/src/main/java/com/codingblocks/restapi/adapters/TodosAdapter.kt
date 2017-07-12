@@ -35,7 +35,7 @@ class TodosAdapter(private var todos: ArrayList<Todo>?) : RecyclerView.Adapter<T
         return todos!!.size
     }
 
-    internal inner class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var cbTodoTitle: CheckBox
 
         init {

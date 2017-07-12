@@ -35,7 +35,7 @@ class PostsAdapter(private var posts: ArrayList<Post>?) : RecyclerView.Adapter<P
         return posts!!.size
     }
 
-    internal inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvPostTitle: TextView
         var tvPostBody: TextView
 
