@@ -4,11 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.codingblocks.restapi.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <ImageButton
+            android:id="@+id/btnUsers"
+            android:src="@drawable/ic_users"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"></ImageButton>
+        <ImageButton
+            android:id="@+id/btnPosts"
+            android:src="@drawable/ic_posts"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"></ImageButton>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <ImageButton
+            android:id="@+id/btnAlbums"
+            android:src="@drawable/ic_albums"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></ImageButton>
+
+        <ImageButton
+            android:id="@+id/btnTodos"
+            android:src="@drawable/ic_todos"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"></ImageButton>
+    </LinearLayout>
 
 </LinearLayout>
