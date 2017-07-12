@@ -9,6 +9,8 @@ import android.widget.TextView
 import com.codingblocks.restapi.R
 import com.codingblocks.restapi.models.Album
 
+import kotlinx.android.synthetic.main.list_item_album.view.*
+
 import java.util.ArrayList
 
 /**
@@ -23,8 +25,10 @@ class AlbumsAdapter(private var albums: ArrayList<Album>?) : RecyclerView.Adapte
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AlbumViewHolder {
-        val li = LayoutInflater.from(parent.context)
-        return AlbumViewHolder(li.inflate(R.layout.list_item_album, parent, false))
+        val itemView = LayoutInflater.from(parent.context)
+                .inflate(R.layout.list_item_album, parent, false)
+
+        return AlbumViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: AlbumViewHolder, position: Int) {
@@ -35,15 +39,11 @@ class AlbumsAdapter(private var albums: ArrayList<Album>?) : RecyclerView.Adapte
         return (albums?.size ?: 0)
     }
 
-    inner class AlbumViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvAlbumTitle: TextView
+    inner class AlbumViewHolder(val albumView: View) : RecyclerView.ViewHolder(albumView) {
 
-        init {
-            tvAlbumTitle = itemView.findViewById<View>(R.id.tvAlbumTitle) as TextView
-        }
 
         fun bindView(album: Album) {
-            tvAlbumTitle.text = album.title
+            albumView.tvAlbumTitle.text = album.title
         }
     }
 }

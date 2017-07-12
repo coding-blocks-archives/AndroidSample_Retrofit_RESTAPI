@@ -8,6 +8,7 @@ import android.widget.TextView
 
 import com.codingblocks.restapi.R
 import com.codingblocks.restapi.models.Post
+import kotlinx.android.synthetic.main.list_item_post.view.*
 
 import java.util.ArrayList
 
@@ -23,8 +24,10 @@ class PostsAdapter(private var posts: ArrayList<Post>?) : RecyclerView.Adapter<P
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
-        val li = LayoutInflater.from(parent.context)
-        return PostViewHolder(li.inflate(R.layout.list_item_post, parent, false))
+        val itemView = LayoutInflater.from(parent.context)
+                .inflate(R.layout.list_item_post, parent, false)
+
+        return PostViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) {
@@ -35,18 +38,11 @@ class PostsAdapter(private var posts: ArrayList<Post>?) : RecyclerView.Adapter<P
         return (posts?.size ?: 0)
     }
 
-    inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvPostTitle: TextView
-        var tvPostBody: TextView
-
-        init {
-            tvPostBody = itemView.findViewById<View>(R.id.tvPostBody) as TextView
-            tvPostTitle = itemView.findViewById<View>(R.id.tvPostTitle) as TextView
-        }
+    inner class PostViewHolder(val postView: View) : RecyclerView.ViewHolder(postView) {
 
         fun bindView(post: Post) {
-            tvPostTitle.text = post.title
-            tvPostBody.text = post.body
+            postView.tvPostTitle.text = post.title
+            postView.tvPostBody.text = post.body
         }
     }
 }

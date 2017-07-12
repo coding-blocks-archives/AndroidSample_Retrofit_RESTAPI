@@ -8,6 +8,7 @@ import android.widget.TextView
 
 import com.codingblocks.restapi.R
 import com.codingblocks.restapi.models.User
+import kotlinx.android.synthetic.main.list_item_user.view.*
 
 import java.util.ArrayList
 
@@ -23,8 +24,10 @@ class UsersAdapter(private var users: ArrayList<User>?) : RecyclerView.Adapter<U
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-        val li = LayoutInflater.from(parent.context)
-        return UserViewHolder(li.inflate(R.layout.list_item_user, parent, false))
+        return UserViewHolder(
+                userView = LayoutInflater.from(parent.context)
+                        .inflate(R.layout.list_item_user, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: UserViewHolder, position: Int) {
@@ -35,24 +38,13 @@ class UsersAdapter(private var users: ArrayList<User>?) : RecyclerView.Adapter<U
         return (users?.size ?: 0)
     }
 
-    inner class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var tvUserName: TextView
-        var tvUserUsername: TextView
-        var tvUserPhone: TextView
-        var tvUserEmail: TextView
-
-        init {
-            tvUserEmail = itemView.findViewById<View>(R.id.tvUserEmail) as TextView
-            tvUserUsername = itemView.findViewById<View>(R.id.tvUserUsername) as TextView
-            tvUserName = itemView.findViewById<View>(R.id.tvUserName) as TextView
-            tvUserPhone = itemView.findViewById<View>(R.id.tvUserPhone) as TextView
-        }
+    inner class UserViewHolder(val userView: View) : RecyclerView.ViewHolder(userView) {
 
         fun bindView(user: User) {
-            tvUserPhone.text = user.phone
-            tvUserEmail.text = user.email
-            tvUserUsername.text = user.username
-            tvUserName.text = user.name
+            userView.tvUserPhone.text = user.phone
+            userView.tvUserEmail.text = user.email
+            userView.tvUserUsername.text = user.username
+            userView.tvUserName.text = user.name
         }
     }
 }
