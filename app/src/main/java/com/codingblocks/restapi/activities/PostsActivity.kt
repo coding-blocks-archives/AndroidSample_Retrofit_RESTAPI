@@ -9,6 +9,7 @@ import com.codingblocks.restapi.R
 import com.codingblocks.restapi.adapters.PostsAdapter
 import com.codingblocks.restapi.api.Client
 import com.codingblocks.restapi.models.Post
+import kotlinx.android.synthetic.main.activity_posts.*
 
 import java.util.ArrayList
 
@@ -17,15 +18,12 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PostsActivity : AppCompatActivity() {
-    internal var rvPostsList: RecyclerView
-    internal var postsAdapter: PostsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_posts)
 
-        rvPostsList = findViewById(R.id.rvPostsList) as RecyclerView
-        postsAdapter = PostsAdapter(ArrayList<Post>())
+        val postsAdapter = PostsAdapter(ArrayList<Post>())
 
         rvPostsList.layoutManager = LinearLayoutManager(this)
         rvPostsList.adapter = postsAdapter

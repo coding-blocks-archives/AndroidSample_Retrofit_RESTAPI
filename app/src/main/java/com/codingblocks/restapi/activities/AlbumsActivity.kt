@@ -9,6 +9,7 @@ import com.codingblocks.restapi.R
 import com.codingblocks.restapi.adapters.AlbumsAdapter
 import com.codingblocks.restapi.api.Client
 import com.codingblocks.restapi.models.Album
+import kotlinx.android.synthetic.main.activity_albums.*
 
 import java.util.ArrayList
 
@@ -17,15 +18,13 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class AlbumsActivity : AppCompatActivity() {
-    internal var rvAlbumsList: RecyclerView
-    internal var albumsAdapter: AlbumsAdapter
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_albums)
 
-        rvAlbumsList = findViewById(R.id.rvAlbumsList) as RecyclerView
-        albumsAdapter = AlbumsAdapter(ArrayList<Album>())
+        val albumsAdapter = AlbumsAdapter(ArrayList<Album>())
 
         rvAlbumsList.layoutManager = LinearLayoutManager(this)
         rvAlbumsList.adapter = albumsAdapter

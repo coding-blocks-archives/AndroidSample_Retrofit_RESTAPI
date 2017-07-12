@@ -9,6 +9,7 @@ import com.codingblocks.restapi.R
 import com.codingblocks.restapi.adapters.TodosAdapter
 import com.codingblocks.restapi.api.Client
 import com.codingblocks.restapi.models.Todo
+import kotlinx.android.synthetic.main.activity_todos.*
 
 import java.util.ArrayList
 
@@ -17,15 +18,12 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class TodosActivity : AppCompatActivity() {
-    internal var rvTodosList: RecyclerView
-    internal var todosAdapter: TodosAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_todos)
 
-        rvTodosList = findViewById(R.id.rvTodosList) as RecyclerView
-        todosAdapter = TodosAdapter(ArrayList<Todo>())
+        val todosAdapter = TodosAdapter(ArrayList<Todo>())
 
         rvTodosList.layoutManager = LinearLayoutManager(this)
         rvTodosList.adapter = todosAdapter

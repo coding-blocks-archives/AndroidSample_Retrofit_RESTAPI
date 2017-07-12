@@ -9,6 +9,7 @@ import com.codingblocks.restapi.R
 import com.codingblocks.restapi.adapters.UsersAdapter
 import com.codingblocks.restapi.api.Client
 import com.codingblocks.restapi.models.User
+import kotlinx.android.synthetic.main.activity_users.*
 
 import java.util.ArrayList
 
@@ -17,16 +18,14 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class UsersActivity : AppCompatActivity() {
-    internal var rvUsersList: RecyclerView
-    internal var usersAdapter: UsersAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_users)
 
-        rvUsersList = findViewById(R.id.rvUsersList) as RecyclerView
+        val usersAdapter = UsersAdapter(ArrayList<User>())
+
         rvUsersList.layoutManager = LinearLayoutManager(this)
-        usersAdapter = UsersAdapter(ArrayList<User>())
         rvUsersList.adapter = usersAdapter
 
         Client.getInstance().api.users.enqueue(object : Callback<ArrayList<User>> {
