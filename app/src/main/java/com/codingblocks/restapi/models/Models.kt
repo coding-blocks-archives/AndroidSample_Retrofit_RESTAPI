@@ -10,4 +10,4 @@ data class Post(val userId: Int, val id: Int, val title: String, val body: Strin
 
 data class User(val id: Int, val name: String, val username: String, val email: String, val phone: String)
 
-data class Todo(val id: Int, val userId: Int, val title: String, val isCompleted: Boolean)
+data class Todo(val id: Int, val userId: Int, val title: String, val completed: Boolean)

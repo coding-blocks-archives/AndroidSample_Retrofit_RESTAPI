@@ -8,6 +8,7 @@ import android.widget.CheckBox
 
 import com.codingblocks.restapi.R
 import com.codingblocks.restapi.models.Todo
+import kotlinx.android.synthetic.main.list_item_todo.view.*
 
 import java.util.ArrayList
 
@@ -23,8 +24,8 @@ class TodosAdapter(private var todos: ArrayList<Todo>?) : RecyclerView.Adapter<T
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
-        val li = LayoutInflater.from(parent.context)
-        return TodoViewHolder(li.inflate(R.layout.list_item_todo, parent, false))
+        return TodoViewHolder(LayoutInflater.from(parent.context)
+                .inflate(R.layout.list_item_todo, parent, false))
     }
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
@@ -32,19 +33,14 @@ class TodosAdapter(private var todos: ArrayList<Todo>?) : RecyclerView.Adapter<T
     }
 
     override fun getItemCount(): Int {
-        return todos!!.size
+        return todos?.size ?: 0
     }
 
     inner class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var cbTodoTitle: CheckBox
-
-        init {
-            cbTodoTitle = itemView.findViewById<View>(R.id.cbTodoTitle) as CheckBox
-        }
 
         fun bindView(todo: Todo) {
-            cbTodoTitle.text = todo.title
-            cbTodoTitle.isChecked = todo.isCompleted
+            itemView.cbTodoTitle.text = todo.title
+            itemView.cbTodoTitle.isChecked = todo.completed
         }
     }
 }
