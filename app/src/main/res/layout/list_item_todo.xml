@@ -8,6 +8,7 @@
     android:layout_height="match_parent">
 
     <CheckBox
+        android:id="@+id/cbTodoTitle"
         android:textSize="20sp"
         android:checked="true"
         android:text="Todo Task Item"
