@@ -29,7 +29,7 @@ class AlbumsActivity : AppCompatActivity() {
         rvAlbumsList.layoutManager = LinearLayoutManager(this)
         rvAlbumsList.adapter = albumsAdapter
 
-        Client.getInstance().api.albums.enqueue(object : Callback<ArrayList<Album>> {
+        Client.api.albums.enqueue(object : Callback<ArrayList<Album>> {
             override fun onResponse(call: Call<ArrayList<Album>>, response: Response<ArrayList<Album>>) {
                 albumsAdapter.setAlbums(response.body()!!)
             }

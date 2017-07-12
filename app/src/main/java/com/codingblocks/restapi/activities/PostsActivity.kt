@@ -28,7 +28,7 @@ class PostsActivity : AppCompatActivity() {
         rvPostsList.layoutManager = LinearLayoutManager(this)
         rvPostsList.adapter = postsAdapter
 
-        Client.getInstance().api.posts.enqueue(object : Callback<ArrayList<Post>> {
+        Client.api.posts.enqueue(object : Callback<ArrayList<Post>> {
             override fun onResponse(call: Call<ArrayList<Post>>, response: Response<ArrayList<Post>>) {
                 postsAdapter.setPosts(response.body()!!)
             }

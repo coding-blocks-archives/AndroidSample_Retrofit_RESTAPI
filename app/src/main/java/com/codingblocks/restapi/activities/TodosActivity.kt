@@ -28,7 +28,7 @@ class TodosActivity : AppCompatActivity() {
         rvTodosList.layoutManager = LinearLayoutManager(this)
         rvTodosList.adapter = todosAdapter
 
-        Client.getInstance().api.todos.enqueue(object : Callback<ArrayList<Todo>> {
+        Client.api.todos.enqueue(object : Callback<ArrayList<Todo>> {
             override fun onResponse(call: Call<ArrayList<Todo>>, response: Response<ArrayList<Todo>>) {
                 todosAdapter.setTodos(response.body()!!)
             }

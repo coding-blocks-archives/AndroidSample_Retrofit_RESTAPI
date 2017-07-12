@@ -28,7 +28,7 @@ class UsersActivity : AppCompatActivity() {
         rvUsersList.layoutManager = LinearLayoutManager(this)
         rvUsersList.adapter = usersAdapter
 
-        Client.getInstance().api.users.enqueue(object : Callback<ArrayList<User>> {
+        Client.api.users.enqueue(object : Callback<ArrayList<User>> {
             override fun onResponse(call: Call<ArrayList<User>>, response: Response<ArrayList<User>>) {
                 usersAdapter.setUsers(response.body()!!)
             }
