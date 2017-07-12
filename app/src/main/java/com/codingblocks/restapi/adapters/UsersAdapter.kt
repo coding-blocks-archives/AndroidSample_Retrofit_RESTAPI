@@ -32,10 +32,10 @@ class UsersAdapter(private var users: ArrayList<User>?) : RecyclerView.Adapter<U
     }
 
     override fun getItemCount(): Int {
-        return users!!.size
+        return (users?.size ?: 0)
     }
 
-    internal inner class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class UserViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvUserName: TextView
         var tvUserUsername: TextView
         var tvUserPhone: TextView

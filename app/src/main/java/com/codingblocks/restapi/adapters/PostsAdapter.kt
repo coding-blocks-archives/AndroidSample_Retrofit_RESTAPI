@@ -32,10 +32,10 @@ class PostsAdapter(private var posts: ArrayList<Post>?) : RecyclerView.Adapter<P
     }
 
     override fun getItemCount(): Int {
-        return posts!!.size
+        return (posts?.size ?: 0)
     }
 
-    internal inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class PostViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvPostTitle: TextView
         var tvPostBody: TextView
 

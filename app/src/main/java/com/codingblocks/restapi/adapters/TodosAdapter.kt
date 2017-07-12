@@ -32,10 +32,10 @@ class TodosAdapter(private var todos: ArrayList<Todo>?) : RecyclerView.Adapter<T
     }
 
     override fun getItemCount(): Int {
-        return todos!!.size
+        return (todos?.size ?: 0)
     }
 
-    internal inner class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class TodoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var cbTodoTitle: CheckBox
 
         init {
