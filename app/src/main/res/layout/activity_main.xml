@@ -14,12 +14,17 @@
         <Button
             android:id="@+id/btnUsers"
             android:text="Users"
+            android:textSize="20sp"
+            android:textStyle="italic"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp" />
         <Button
             android:id="@+id/btnPosts"
             android:text="Posts"
+            android:textStyle="italic"
+            android:textSize="20sp"
+
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp" />
@@ -33,12 +38,16 @@
         <Button
             android:id="@+id/btnAlbums"
             android:text="Albums"
+            android:textSize="20sp"
+            android:textStyle="italic"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp" />
         <Button
             android:id="@+id/btnTodos"
             android:text="Todos"
+            android:textSize="20sp"
+            android:textStyle="italic"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp" />
