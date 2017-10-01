@@ -9,6 +9,8 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvCommentsList"
         android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:padding="3dp"
         android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
 </FrameLayout>

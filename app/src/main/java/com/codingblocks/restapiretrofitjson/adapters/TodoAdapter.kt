@@ -48,6 +48,12 @@ public class TodoAdapter (
 
         fun bindTodo(todo: Todo) {
             itemView.tvTodoTitle.text = todo.title;
+            if(todo.completed==true){
+                itemView.checkbox.setChecked(true);
+            }
+            else{
+                itemView.checkbox.setChecked(false);
+            }
         }
     }
 }
